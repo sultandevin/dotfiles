@@ -1,0 +1,11 @@
+git
+gh
+lazygit
+stow
+zsh
+tmux
+curl
+wget
+unzip
+ripgrep
+fzf
