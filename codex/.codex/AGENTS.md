@@ -1,0 +1,4 @@
+- Do not preserve backward compatibility.
+- Choose the simplest implementation that fully meets the current requirements.
+- End any turn that reports on long-running or delegated work with a short status: **Goal**, **Done**, **Next**, **Needs you** (or "nothing").
+- Avoid unneccessary secondary labels and descriptions. Let the layout do the explaining.
