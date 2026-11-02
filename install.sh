@@ -192,7 +192,7 @@ for package in "${PACKAGES[@]}"; do
             mv "$target" "$BACKUP_DIR/$rel"
             echo "Backed up: $target"
         fi
-    done < <(find "$DOTFILES_DIR/$package" -type f -print0)
+    done < <(find "$DOTFILES_DIR/$package" \( -type f -o -type l \) -print0)
 done
 
 # ------------------------------------------

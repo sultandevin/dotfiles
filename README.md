@@ -58,7 +58,11 @@ export GITLAB_TOKEN="..."
 | `tmux`    | `~/.config/tmux/tmux.conf`              |
 | `git`     | `~/.gitconfig`                          |
 | `lazygit` | `~/.config/lazygit/config.yml`          |
-| `codex`   | `~/.codex/config.toml`                  |
+| `codex`   | Codex config and shared agent instructions |
+
+Edit `codex/.codex/AGENTS.md` to change the shared global instructions for
+Codex, Claude Code, Pi, and OpenCode. Stow links each harness’s instruction file
+to this one source.
 
 Only portable files from `~/.codex` are tracked. Runtime state (sqlite DBs,
 sessions, logs, `auth.json`, plugin caches) stays untracked.
