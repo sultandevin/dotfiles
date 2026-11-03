@@ -9,3 +9,5 @@
 	helper = !/usr/bin/gh auth git-credential
 [url "git@gitlab.glints.com:"]
 	insteadOf = https://gitlab.glints.com/
+[init]
+	defaultBranch = main
