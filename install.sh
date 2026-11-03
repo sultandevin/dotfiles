@@ -207,6 +207,9 @@ stow --verbose --no-folding \
     --target="$HOME" \
     "${PACKAGES[@]}"
 
+echo
+"$DOTFILES_DIR/link-agents.sh"
+
 # ------------------------------------------
 # 10. Verify configuration
 # ------------------------------------------
@@ -219,6 +222,7 @@ for config in \
     "$HOME/.config/tmux/tmux.conf" \
     "$HOME/.config/lazygit/config.yml" \
     "$HOME/.codex/config.toml" \
+    "$HOME/.agents/AGENTS.md" \
     "$HOME/.gitconfig"
 do
     if [[ -e "$config" ]]; then
