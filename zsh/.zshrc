@@ -26,6 +26,9 @@ alias dev='bun run dev'
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
+# bun
+export BUN_INSTALL="$HOME/.bun"
+
 # PATH - all in one place
 export PATH="$BUN_INSTALL/bin:$HOME/.local/share/bob/nvim-bin:$HOME/.local/share/nvim/mason/bin:$HOME/.local/bin:$PATH"
 
@@ -167,9 +170,6 @@ npx() {
     npx "$@"
 }
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-
 # bun completions
 [ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
 
@@ -191,5 +191,12 @@ export GOENV_ROOT="$HOME/.goenv"
 if [[ -d "$GOENV_ROOT" ]]; then
     export PATH="$GOENV_ROOT/bin:$PATH"
     export GOENV_PATH_ORDER=front
-    eval "$(goenv init -)"
+    # Rebuild shims with `goenv rehash` after adding Go executables.
+    eval "$(goenv init - --no-rehash zsh)"
+    goenv rehash --only-manage-paths
 fi
+
+export SSH_AUTH_SOCK="$HOME/.ssh/bitwarden-agent.sock"
+
+
+alias yarn="corepack yarn"
