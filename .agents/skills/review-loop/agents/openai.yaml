@@ -1,0 +1,5 @@
+interface:
+  display_name: "Review Loop"
+  short_description: "Iterate until an independent reviewer finds nothing"
+policy:
+  allow_implicit_invocation: false

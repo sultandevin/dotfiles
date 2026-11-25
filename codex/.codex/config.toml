@@ -28,34 +28,25 @@ trust_level = "trusted"
 [projects."/home/molly/glints/core/.codex/worktrees/api-v2-ff-cleanup"]
 trust_level = "trusted"
 
-[projects."/home/molly/projects/simaster"]
+[projects."/home/molly/glints-otp/core"]
 trust_level = "trusted"
 
-[projects."/home/molly/university/skripsi"]
+[projects."/home/molly/glints-otp/core/houston"]
 trust_level = "trusted"
 
-[projects."/home/molly/.t3/worktrees/employers/t3-7bd981ea"]
+[projects."/home/molly/glints-otp/core/employers"]
 trust_level = "trusted"
 
-[projects."/home/molly/.t3/worktrees/employers/t3-fc897543"]
+[projects."/home/molly/glints-otp/payment-order"]
 trust_level = "trusted"
 
-[projects."/home/molly/.t3/worktrees/employers/t3-b2e8213c"]
+[projects."/home/molly/glints-otp/core/employers/.worktrees/feature-mon-146730"]
 trust_level = "trusted"
 
-[projects."/home/molly/glints/payment-order"]
+[projects."/home/molly/projects/bimbelbeta"]
 trust_level = "trusted"
 
-[projects."/home/molly/.t3/worktrees/employers/t3-a0ca83ad"]
-trust_level = "trusted"
-
-[projects."/home/molly/glints/core/api-v2"]
-trust_level = "trusted"
-
-[projects."/home/molly/.t3/worktrees/api-v2/t3-73fe6c6c"]
-trust_level = "trusted"
-
-[projects."/home/molly/glints/core/api-v2/.worktrees/feature-mon-148306"]
+[projects."/home/molly/projects/csugm"]
 trust_level = "trusted"
 
 [tui]
@@ -79,19 +70,29 @@ source = "https://github.com/DietrichGebert/ponytail.git"
 source_type = "git"
 source = "https://github.com/mattpocock/skills.git"
 
+[marketplaces.frontier-simplify]
+source_type = "git"
+source = "https://github.com/MongLong0214/frontier-simplify.git"
+
 [plugins."ponytail@ponytail"]
 enabled = true
 
 [plugins."mattpocock-skills@mattpocock"]
 enabled = true
 
+[plugins."frontier-simplify@frontier-simplify"]
+enabled = true
+
 [hooks.state]
 
 [hooks.state."ponytail@ponytail:hooks/claude-codex-hooks.json:session_start:0:0"]
 trusted_hash = "sha256:defea43402fc8edba23234c694a1117cf80efc2da38968a40a1004cd9d63f725"
+trusted_content_hash = "sha256:e7c363f17b542042b59b8f08feeb59204bd9e584193abf1d7df73322f0db4732"
 
 [hooks.state."ponytail@ponytail:hooks/claude-codex-hooks.json:user_prompt_submit:0:0"]
 trusted_hash = "sha256:5aa5ec474e0bb546f207794993b37fdf7507e54a64e09216be164c5b7b42a197"
+trusted_content_hash = "sha256:e7c363f17b542042b59b8f08feeb59204bd9e584193abf1d7df73322f0db4732"
 
 [hooks.state."ponytail@ponytail:hooks/claude-codex-hooks.json:subagent_start:0:0"]
 trusted_hash = "sha256:5b2c1dfa8c7ecc5e8881c8e69479f65d46ed727e0bc5b8e7b4553cee9e5c3daf"
+trusted_content_hash = "sha256:e7c363f17b542042b59b8f08feeb59204bd9e584193abf1d7df73322f0db4732"
