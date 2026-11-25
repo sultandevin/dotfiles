@@ -28,6 +28,36 @@ trust_level = "trusted"
 [projects."/home/molly/glints/core/.codex/worktrees/api-v2-ff-cleanup"]
 trust_level = "trusted"
 
+[projects."/home/molly/projects/simaster"]
+trust_level = "trusted"
+
+[projects."/home/molly/university/skripsi"]
+trust_level = "trusted"
+
+[projects."/home/molly/.t3/worktrees/employers/t3-7bd981ea"]
+trust_level = "trusted"
+
+[projects."/home/molly/.t3/worktrees/employers/t3-fc897543"]
+trust_level = "trusted"
+
+[projects."/home/molly/.t3/worktrees/employers/t3-b2e8213c"]
+trust_level = "trusted"
+
+[projects."/home/molly/glints/payment-order"]
+trust_level = "trusted"
+
+[projects."/home/molly/.t3/worktrees/employers/t3-a0ca83ad"]
+trust_level = "trusted"
+
+[projects."/home/molly/glints/core/api-v2"]
+trust_level = "trusted"
+
+[projects."/home/molly/.t3/worktrees/api-v2/t3-73fe6c6c"]
+trust_level = "trusted"
+
+[projects."/home/molly/glints/core/api-v2/.worktrees/feature-mon-148306"]
+trust_level = "trusted"
+
 [tui]
 screen_reader_detection_done = true
 agents_overview_grouping = "project"
