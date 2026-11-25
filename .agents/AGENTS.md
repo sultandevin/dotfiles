@@ -16,4 +16,24 @@
 ## Lessons
 <!-- Newest on top. Delete what no longer applies. -->
 
-- When using Pi through T3 Code, do not assume interactive Pi commands such as /reload are available.
+- When asked to document a rule, write it to this personal AGENTS.md, never to a repository's AGENTS.md.
+- When recording plans, tickets, or PR screenshots, use GitHub Issues and attachments/external artifacts rather than committing planning docs, local trackers, or screenshot-only branches.
+- When addressing PR/MR feedback, keep changes local until explicitly asked to push.
+- When a required CLI (e.g., `gh`) is missing or unauthenticated, ask the user before installing or authenticating.
+- When syncing feature branches with a base branch, merge the base into the lowest affected branch; use rebase only for stacked feature branches.
+- When starting work from an older checkout, sync with the latest base branch first so you reuse already-merged modules.
+- When checking a shared dependency, inspect its owning repo and consumers before concluding something is missing.
+- When delegating work, use GLM 5.3 Flash rather than GLM 5.3; when using Luna for implementation, do research and architectural planning in the parent and delegate only approved code work.
+- When dividing refactors among subagents, give each a small feature-owned scope with disjoint files, sequence dependent work, and serialize integration commits.
+- When changing frontend UI, take a screenshot and show it to the user.
+- When the user says "keep previous UI", restore the exact previous visuals and add only the explicitly confirmed behavior.
+- When a change is scoped to named screens, keep the diff to those screens without restructuring shared components or swapping tokens for literals.
+- When a task needs different copy, add a new message ID instead of renaming an existing one so shared surfaces keep their labels.
+- When replacing hand-rolled UI with a library, adopt the library's better behavior instead of reproducing old bugs, and call out deliberate behavior changes in the commit and PR.
+- When writing TypeScript, use inferred or validated types without `any`, type assertions, or non-null assertions; reserve `unknown` for untrusted boundaries and narrow it immediately.
+- When writing app imports, use `@/` for paths climbing two or more parent levels and keep `./` and single `../` imports relative.
+- When extending a codebase, match the nearest feature package's file layout, test layout, and conventions; introduce a new pattern only when the existing one cannot meet a requirement.
+- When structuring backend services, reuse shared domain/model types directly (no duplicate structs, local type aliases, or single-implementation interfaces) and own DB transactions in the repository layer rather than passing transaction callbacks into services.
+- When handling HTTP requests, keep handlers thin (parse, bind/validate request shape, call service) and put domain/DB-dependent checks in services; mask unexpected errors at the boundary and trust values read from your own DB without defensive re-normalization.
+- When an update payload must distinguish omitted, explicit `null`, and set values, use a field-level optional type matching repo conventions instead of raw JSON plus parallel boolean flags.
+- When sharing helpers across endpoints, pass only the needed fields or an endpoint-agnostic type (never fabricate another endpoint's request struct), name each helper strictly for what it does, and inline trivial wrappers.
