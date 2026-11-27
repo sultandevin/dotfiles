@@ -1,6 +1,7 @@
 interface:
   display_name: "Unslop UI"
-  short_description: "Cut AI tells from interface copy, charts and surface"
-  default_prompt: "Run unslop-ui on the files I changed"
+  short_description: "Strip AI-generated UI copy, decorative chrome and chart clutter"
+  default_prompt: "Run $unslop-ui on the changed UI files to cut AI copy and decorative chrome."
+
 policy:
-  allow_implicit_invocation: false
+  allow_implicit_invocation: true
