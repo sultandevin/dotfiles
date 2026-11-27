@@ -53,15 +53,32 @@ Walk through the actual implementation from the user's click all the way to the 
 
 Provide a visual overview of the file structure and request/data flow across layers (`FE -> API/Gateway -> Handler -> Service -> Repository -> DB / External Providers`).
 
-- **Default output:** Generate a clean, self-contained HTML file (single `.html` with inline CSS/SVG or Mermaid via CDN) depicting the architecture, file map, and numbered data flow so it can be opened directly in a browser or previewed in an editor.
+- **Default output:** Generate a clean, self-contained HTML diagram (single `.html` with inline CSS/SVG or Mermaid via CDN) depicting the architecture, file map, and numbered data flow so it can be opened directly in a browser or previewed in an editor.
+- **Design it like a UI, not a document (minimal text):**
+  - Keep node labels ultra-short (2–5 words or a symbol/route name like `POST /orders` or `resolveInvoiceItem`).
+  - Use visual hierarchy—boxes, arrows, numbered flow badges, color-coded layers, and whitespace—instead of explanatory sentences or paragraphs inside the graph.
+  - Put all detailed explanations and prose in the surrounding Markdown response, never as walls of text inside the HTML graphic.
 - **Fallback:** If generating or previewing an HTML file is not possible in the current environment, or if the user asks for plain text, render a clean ASCII flow diagram directly in the response instead.
 
 #### 4b. Database Schema and Tables
 
-Before or alongside the code trace, summarize the core database tables involved so the data model is clear up front.
+Before or alongside the code trace, visualize the core database tables and their relationships using **ASCII table boxes** (in a fenced code block) so the data model is immediately scannable as a diagram.
 
-- List each relevant table, its primary purpose in this feature, key columns (IDs, status enums, foreign keys, money/amount fields), and relationships.
+- Draw each relevant table as a visual ASCII box showing the table name, primary purpose, and key columns (`PK`, `FK`, status enums, money/amount fields, JSONB blobs).
+- Connect related tables with ASCII relationship lines (e.g., `1 ──< N`, `──>`) showing foreign-key links.
 - Mark any tables inferred from ORM models or missing migrations with `[Inferred]`.
+- Example format:
+  ```text
+  +-------------------------------+        +-------------------------------+
+  | orders                        |        | paid_products                 |
+  | (persisted purchase record)   |        | (product catalogue)           |
+  +-------------------------------+        +-------------------------------+
+  | PK id / order_number          |   1..N | PK skuId                      |
+  | FK company_id                 |------->|    sku, type, purchaseType    |
+  |    status, paid_amount        |        |    productInfo (JSONB)        |
+  |    product_snapshot (JSONB)   |        +-------------------------------+
+  +-------------------------------+
+  ```
 
 #### 4c. Numbered User-to-Database Trace
 
